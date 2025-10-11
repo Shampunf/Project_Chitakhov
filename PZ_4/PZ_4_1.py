@@ -1,26 +1,31 @@
-# Сумма: X - X**3/3 + X**5/5 - ... + (-1)**N * X**(2N+1)/(2N+1), при |X| < 1, N > 0
-
+# Дано вещественное число X (|X|<1) и целое число N (>0). Найти значение выражения
+# X - X
+# 3
+# /3 + X5
+# /5 - ... + (-1)NX
+# 2N +1/(2N +1). Полученное число является приближенным
+# значением функции arctg в точке X.
 try:
-    x = float(input("Введите вещественное X (|X| < 1): "))
+    x = float(input("Введите вещественное X (|X| < 1): ")) # ввод
 except ValueError:
-    print("Ошибка: X должно быть числом")
+    print("Ошибка: X должно быть числом") # вывод ошибки
 else:
     try:
-        n = int(input("Введите целое N (> 0): "))
+        n = int(input("Введите целое N (> 0): ")) # ввод
     except ValueError:
         print("Ошибка: N должно быть целым числом")
     else:
-        if abs(x) >= 1:
+        if abs(x) >= 1: # условие ООФ
             print("Ошибка: |X| должно быть строго меньше 1")
-        elif n <= 0:
+        elif n <= 0: # условие 2
             print("Ошибка: N должно быть больше 0")
         else:
             k = 0
             series_sum = 0.0
             while k <= n:
-                numerator = (-1) ** k * (x ** (2 * k + 1))
-                denominator = 2 * k + 1
-                series_sum += numerator / denominator
+                numerator = (-1) ** k * (x ** (2 * k + 1)) # промежуточная формула
+                denominator = 2 * k + 1 # промежуточная формула
+                series_sum += numerator / denominator # формула
                 k += 1
 
             print("Значение суммы (приближение arctg(x)):", series_sum)

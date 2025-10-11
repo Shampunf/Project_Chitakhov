@@ -2,10 +2,7 @@
 # Вывести K и саму сумму.
 
 try:
-    a = float(input("Введите A (> 1): "))
-except ValueError:
-    print("Ошибка: A должно быть числом")
-else:
+    a = float(input("Введите A (> 1): ")) # ввод числа
     if a <= 1.0:
         print("Ошибка: A должно быть больше 1")
     else:
@@ -14,13 +11,15 @@ else:
 
         # Увеличиваем k, пока сумма строго меньше A
         while True:
-            next_k = k + 1
-            next_sum = harmonic_sum + 1.0 / next_k
-            if next_sum < a:
-                k = next_k
+            next_k = k + 1 # поле для формулы
+            next_sum = harmonic_sum + 1.0 / next_k # нахождение гармонического числа
+            if next_sum < a: # условие для продолжения нахождения числа
+                k = next_k #присвоение для следующего цикла
                 harmonic_sum = next_sum
             else:
                 break
 
-        print("Максимальное K:", k)
+        print("Максимальное K:", k) # вывод
         print("Сумма 1 + 1/2 + ... + 1/K:", harmonic_sum)
+except ValueError: # ловим исключение
+    print("Ошибка: A должно быть числом") # иключение

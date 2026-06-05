@@ -1,11 +1,17 @@
+"""Даны текущие оценки студента по дисциплине «Основы программирования» за месяц.
+ Необходимо найти количество «2», «3», «4» и «5», полученных студентом, и определить итоговую оценку за месяц."""
 
-marks = [2,5,4,3,4,5,3,3,4,5,2,2,2,]
+from random import randint
 
-count2 = 0
-count3 = 0
-count4 = 0
-count5 = 0
+marks = [randint(2, 5) for i in range(10)]
 
-totalSum = 0
-for i in marks:
-    totalSum += i
+print("Оценки:", marks)
+
+print("Количество 2:", marks.count(2))
+print("Количество 3:", marks.count(3))
+print("Количество 4:", marks.count(4))
+print("Количество 5:", marks.count(5))
+
+final_mark = round(sum(marks) / len(marks))
+
+print("Итоговая оценка:", final_mark)

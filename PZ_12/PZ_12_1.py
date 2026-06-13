@@ -11,7 +11,7 @@ for row in matrix:
 preLastRow = matrix[-2]
 
 minElement = min(preLastRow)
-# Выводим результат
+
 print("\nПредпоследняя строка:")
 print(preLastRow)
 

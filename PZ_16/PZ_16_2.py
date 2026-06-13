@@ -22,7 +22,8 @@ class Square(Figure):
         super().__init__(side, side)
 
     def area(self):
-        return self.weight*self.weight
+        return self.width ** 2
+
     def perimeter(self):
         return self.weight*4
 r=Regtangle()

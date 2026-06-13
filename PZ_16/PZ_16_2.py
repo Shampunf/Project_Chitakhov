@@ -25,14 +25,4 @@ class Square(Figure):
         return self.width ** 2
 
     def perimeter(self):
-        return self.weight*4
-r=Regtangle()
-r.weight = 10
-r.height = 20
-print(r.area())
-
-
-s=Square()
-s.weight = 10
-s.height = 10
-print(s.area(),s.perimeter())
+        return 4 * self.width

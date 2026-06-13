@@ -2,15 +2,14 @@
 элементов."""
 from random import randint
 
-matrix = [[randint(-10, 10) for j in range(4)] for i in range(5)]
+matrix = [[randint(-10, 10) for _ in range(4)] for _ in range(5)]
 
 print("Исходная матрица:")
-for row in matrix:
-    print(row)
+list(map(print, matrix))
 
-print("\nСреднее арифметическое строк с нечетным номером:")
+odd_rows = filter(lambda row: row[0] % 2 != 0,enumerate(matrix, start=1))
 
-for i in range(len(matrix)):
-    if (i + 1) % 2 != 0:
-        average = sum(matrix[i]) / len(matrix[i])
-        print(f"Строка {i + 1}: {average}")
+averages = map(lambda row: (row[0], sum(row[1]) / len(row[1])),odd_rows)
+
+print("Среднее арифметическое строк с нечетным номером:")
+list(map(lambda x: print(f"Строка {x[0]}: {x[1]}"), averages))

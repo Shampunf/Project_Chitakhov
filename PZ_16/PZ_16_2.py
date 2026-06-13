@@ -1,7 +1,11 @@
-class Shape:
-    weight = 0
-    height = 0
-class Regtangle(Shape):
+"""Создайте базовый класс "Фигура" со свойствами "ширина" и "высота". От этого
+класса унаследуйте классы "Прямоугольник" и "Квадрат". Для класса "Квадрат"
+переопределите методы, связанные с вычислением площади и периметра."""
+class Figure:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
     def area(self):
         return self.width * self.height
 

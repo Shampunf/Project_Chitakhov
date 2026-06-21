@@ -25,4 +25,10 @@ class Square(Figure):
         return self.width ** 2
 
     def perimeter(self):
-        return 4 * self.width
+        return self.width * 4
+
+
+a = Square(3)
+
+print("Площадь: ",a.area())
+print("Периметр: ",a.perimeter())

@@ -10,7 +10,7 @@ topBar = tk.Frame(root, bg="#d9d9d9", height=30)
 topBar.pack(fill="x")
 topBar.pack_propagate(False)
 
-tk.Label(topBar,text="Обработка формы – Mozilla Firefox",bg="#d9d9d9",fg="#333333",font=("Arial", 11, "bold")).place(relx=0.5, rely=0.5, anchor="center")
+tk.Label(topBar,text="Обработка формы – Mozilla Firefox",bg="#d9d9d9",font=("Arial", 11, "bold")).place(relx=0.5, rely=0.5, anchor="center")
 
 tabsBar = tk.Frame(root, bg="#e6e6e6", height=35)
 tabsBar.pack(fill="x")
